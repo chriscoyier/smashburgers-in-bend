@@ -2,8 +2,10 @@
 restaurant: Willieburger
 slug: willieburger
 website: https://www.instagram.com/willieburgerbend/
-summary: Simple and classic.
-bg: "#010101"
+summary: They started the Bend craze
+bg: "#0a0c11"
 ---
 
-Full review text.
+Willieburger is what taught me to love smashburgers. Definitely get it with the jalepenos.
+
+Weird inconsistant hours.

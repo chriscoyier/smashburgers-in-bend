@@ -11,7 +11,7 @@ const data = await Astro.glob("../content/*.md");
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>🍔 Burgers in Bend 🍔</h1>
+    <h1>Smashburgers <span>in Bend</span></h1>
 
     <ul role="list" class="link-card-grid">
       {
@@ -29,6 +29,7 @@ const data = await Astro.glob("../content/*.md");
               slug={post.frontmatter.slug}
               img={img}
               bg={post.frontmatter.bg}
+              color={post.frontmatter.color}
               title={post.frontmatter.restaurant}
               body={post.frontmatter.summary}
             />
@@ -39,7 +40,7 @@ const data = await Astro.glob("../content/*.md");
   </main>
 </Layout>
 
-<style>
+<style lang="scss">
   main {
     margin: auto;
     padding: 1rem;
@@ -55,6 +56,13 @@ const data = await Astro.glob("../content/*.md");
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
+    span {
+      display: block;
+      font-size: 0.5em;
+      font-weight: 200;
+      text-transform: uppercase;
+      letter-spacing: 1rem;
+    }
   }
   .link-card-grid {
     display: grid;

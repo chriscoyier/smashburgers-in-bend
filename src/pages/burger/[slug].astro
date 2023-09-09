@@ -33,7 +33,7 @@ console.log(post);
 
 <Layout title="Burger">
   <nav>
-    <a href="/">Back</a>
+    <a href="/">&larr; Back to All Burgers</a>
   </nav>
   <main transition:name={`burger-${slug}`}>
     <Image
@@ -43,13 +43,22 @@ console.log(post);
       transition:name={`burger-image-${slug}`}
     />
     <h1 transition:name={`title-${slug}`}>{post.frontmatter.restaurant}</h1>
-    <post.Content />
+    <div class="content">
+      <post.Content />
+    </div>
   </main>
 </Layout>
 
-<style>
+<style lang="scss">
+  nav {
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
   main {
     color: white;
+    padding: 2rem;
   }
   img {
     pointer-events: none;
@@ -66,5 +75,9 @@ console.log(post);
   h1 {
     font-weight: 900;
     font-size: 6rem;
+  }
+  .content {
+    max-width: 400px;
+    line-height: 1.5;
   }
 </style>
