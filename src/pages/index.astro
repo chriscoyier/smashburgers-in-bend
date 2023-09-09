@@ -1,17 +1,40 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
+
+import burgerAmericanaImg from "../images/burgers/americana.jpg";
+import burgerBlueeyesImg from "../images/burgers/blueeyes.jpg";
+import burgerWillieburgerImg from "../images/burgers/willieburger.jpg";
+
+const data = await Astro.glob("../content/*.md");
 ---
 
 <Layout title="Welcome to Astro.">
   <main>
-    <h1>Smashburgers in Bend, Oregon</h1>
-
-    <p>Let's have a look.</p>
+    <h1>🍔 Burgers in Bend 🍔</h1>
 
     <ul role="list" class="link-card-grid">
-      <Card href="/burger/1" title="Burger #1" body="This is a burger." />
-      <Card href="/burger/2" title="Burger #2" body="This is another burger." />
+      {
+        data.map((post, i) => {
+          let img;
+          if (i === 0) {
+            img = burgerAmericanaImg;
+          } else if (i === 1) {
+            img = burgerBlueeyesImg;
+          } else if (i === 2) {
+            img = burgerWillieburgerImg;
+          }
+          return (
+            <Card
+              slug={post.frontmatter.slug}
+              img={img}
+              bg={post.frontmatter.bg}
+              title={post.frontmatter.restaurant}
+              body={post.frontmatter.summary}
+            />
+          );
+        })
+      }
     </ul>
   </main>
 </Layout>
@@ -28,7 +51,7 @@ import Card from "../components/Card.astro";
   }
   h1 {
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;

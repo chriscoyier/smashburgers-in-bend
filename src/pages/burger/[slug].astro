@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Image } from "astro:assets";
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: "americana" } },
+    { params: { slug: "blueeyes" } },
+    { params: { slug: "willieburger" } },
+  ];
+}
+
+import burgerAmericanaImg from "../../images/burgers/americana.jpg";
+import burgerBlueeyesImg from "../../images/burgers/blueeyes.jpg";
+import burgerWillieburgerImg from "../../images/burgers/willieburger.jpg";
+
+const { slug } = Astro.params;
+
+let img;
+if (slug === "americana") {
+  img = burgerAmericanaImg;
+} else if (slug === "blueeyes") {
+  img = burgerBlueeyesImg;
+} else if (slug === "willieburger") {
+  img = burgerWillieburgerImg;
+}
+
+// Feels weird to have to do this.
+const posts = await Astro.glob(`../../content/*.md`);
+const post = posts.find((post) => post.file.includes(slug));
+console.log(post);
+---
+
+<Layout title="Burger">
+  <nav>
+    <a href="/">Back</a>
+  </nav>
+  <main transition:name={`burger-${slug}`}>
+    <Image
+      src={img}
+      alt="burger"
+      class="img"
+      transition:name={`burger-image-${slug}`}
+    />
+    <h1 transition:name={`title-${slug}`}>{post.frontmatter.restaurant}</h1>
+    <post.Content />
+  </main>
+</Layout>
+
+<style>
+  main {
+    color: white;
+  }
+  img {
+    pointer-events: none;
+    position: absolute;
+    bottom: 0dvh;
+    right: 0;
+    width: 100vw;
+    -webkit-mask-image: radial-gradient(
+      ellipse 100% 90% at 100% 85%,
+      black 40%,
+      transparent 100%
+    );
+  }
+  h1 {
+    font-weight: 900;
+    font-size: 6rem;
+  }
+</style>
