@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return [{ params: { burger: "1" } }];
+}
+---
+
+<Layout title="Burger">
+  <main transition:name="about">
+    <h1>Burger Page</h1>
+    <p>Hello</p>
+  </main>
+</Layout>
+
+<style>
+  main {
+    color: white;
+  }
+</style>

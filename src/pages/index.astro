@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <h1>Smashburgers in Bend, Oregon</h1>
+
+    <p>Let's have a look.</p>
+
+    <ul role="list" class="link-card-grid">
+      <Card href="/burger/1" title="Burger #1" body="This is a burger." />
+      <Card href="/burger/2" title="Burger #2" body="This is another burger." />
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
