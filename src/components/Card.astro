@@ -21,7 +21,7 @@ const { slug, title, body, img, bg, color } = Astro.props;
   </header>
   <Image
     src={img}
-    alt="burger"
+    alt={`Photograph of burger from ${title}`}
     class="img"
     transition:name={`burger-image-${slug}`}
   />
@@ -32,6 +32,10 @@ const { slug, title, body, img, bg, color } = Astro.props;
     list-style: none;
     border-radius: 7px;
     overflow: hidden;
+    transition: 0.15s;
+    transform-origin: top center;
+    position: relative;
+    padding-block-end: 300px;
     header {
       padding: 1rem;
       a {
@@ -47,15 +51,15 @@ const { slug, title, body, img, bg, color } = Astro.props;
     &:hover,
     &:focus-within {
       .img {
-        width: 130%;
-        max-width: 130%;
-        object-position: right -20px bottom -50px;
+        width: 110%;
+        object-position: right -50px bottom -40px;
       }
     }
   }
 
   .img {
     transition: 0.2s;
+    transform-origin: bottom right;
     -webkit-mask-image: radial-gradient(
       ellipse 105% 90% at 110% 85%,
       black 60%,
@@ -65,12 +69,16 @@ const { slug, title, body, img, bg, color } = Astro.props;
     max-width: 120%;
     object-fit: cover;
     height: 300px;
-    object-position: right -40px bottom -50px;
+    object-position: right -40px bottom -40px;
+    position: absolute;
+    bottom: -20px;
+    right: -40px;
   }
   h2 {
-    font-weight: 300;
     font-size: 2.5rem;
     margin: 0;
+    font-variation-settings: "wdth" 140;
+    transition: 0.5s;
   }
   p {
     margin-top: 0.5rem;

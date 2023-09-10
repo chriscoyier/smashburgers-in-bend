@@ -7,12 +7,14 @@ export function getStaticPaths() {
     { params: { slug: "americana" } },
     { params: { slug: "blueeyes" } },
     { params: { slug: "willieburger" } },
+    { params: { slug: "midcity" } },
   ];
 }
 
 import burgerAmericanaImg from "../../images/burgers/americana.jpg";
 import burgerBlueeyesImg from "../../images/burgers/blueeyes.jpg";
 import burgerWillieburgerImg from "../../images/burgers/willieburger.jpg";
+import burgerMidCityImg from "../../images/burgers/midcity.jpg";
 
 const { slug } = Astro.params;
 
@@ -23,25 +25,24 @@ if (slug === "americana") {
   img = burgerBlueeyesImg;
 } else if (slug === "willieburger") {
   img = burgerWillieburgerImg;
+} else if (slug === "midcity") {
+  img = burgerMidCityImg;
 }
 
 // Feels weird to have to do this.
 const posts = await Astro.glob(`../../content/*.md`);
 const post = posts.find((post) => post.file.includes(slug));
-console.log(post);
 ---
 
-<Layout title="Burger">
-  <nav>
-    <a href="/">&larr; Back to All Burgers</a>
-  </nav>
+<Layout title={`${post.frontmatter.restaurant} | Smashburgers in Bend`}>
   <main transition:name={`burger-${slug}`}>
     <Image
       src={img}
-      alt="burger"
+      alt={`Photograph of burger from ${post.frontmatter.restaurant}`}
       class="img"
       transition:name={`burger-image-${slug}`}
     />
+    <a class="back" href="/">&larr; Smashburgers in Bend</a>
     <h1 transition:name={`title-${slug}`}>{post.frontmatter.restaurant}</h1>
     <div class="content">
       <post.Content />
@@ -50,10 +51,14 @@ console.log(post);
 </Layout>
 
 <style lang="scss">
-  nav {
-    a {
-      color: white;
-      text-decoration: none;
+  .back {
+    color: white;
+    opacity: 0.66;
+    text-decoration: none;
+    text-transform: uppercase;
+    &:hover,
+    &:focus {
+      opacity: 1;
     }
   }
   main {
@@ -63,9 +68,10 @@ console.log(post);
   img {
     pointer-events: none;
     position: absolute;
-    bottom: 0dvh;
+    bottom: 0;
     right: 0;
     width: 100vw;
+    max-width: 1000px;
     -webkit-mask-image: radial-gradient(
       ellipse 100% 90% at 100% 85%,
       black 40%,
@@ -74,7 +80,8 @@ console.log(post);
   }
   h1 {
     font-weight: 900;
-    font-size: 6rem;
+    font-size: var(--font-size-xxxl);
+    margin: 0 0 2rem 0;
   }
   .content {
     max-width: 400px;

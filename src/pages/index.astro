@@ -5,11 +5,12 @@ import Card from "../components/Card.astro";
 import burgerAmericanaImg from "../images/burgers/americana.jpg";
 import burgerBlueeyesImg from "../images/burgers/blueeyes.jpg";
 import burgerWillieburgerImg from "../images/burgers/willieburger.jpg";
+import burgerMidCityImg from "../images/burgers/midcity.jpg";
 
 const data = await Astro.glob("../content/*.md");
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Smashburgers in Bend">
   <main>
     <h1>Smashburgers <span>in Bend</span></h1>
 
@@ -17,11 +18,13 @@ const data = await Astro.glob("../content/*.md");
       {
         data.map((post, i) => {
           let img;
-          if (i === 0) {
+          if (post.frontmatter.slug === "americana") {
             img = burgerAmericanaImg;
-          } else if (i === 1) {
+          } else if (post.frontmatter.slug === "blueeyes") {
             img = burgerBlueeyesImg;
-          } else if (i === 2) {
+          } else if (post.frontmatter.slug === "midcity") {
+            img = burgerMidCityImg;
+          } else if (post.frontmatter.slug === "willieburger") {
             img = burgerWillieburgerImg;
           }
           return (
@@ -51,16 +54,17 @@ const data = await Astro.glob("../content/*.md");
     line-height: 1.6;
   }
   h1 {
-    font-size: 4rem;
-    font-weight: 900;
+    font-size: var(--font-size-xxxl);
+    font-variation-settings: "wdth" 50;
     line-height: 1;
     text-align: center;
     margin-bottom: 1em;
+    text-transform: uppercase;
     span {
+      font-variation-settings: "wdth" 160;
       display: block;
-      font-size: 0.5em;
+      font-size: 0.3em;
       font-weight: 200;
-      text-transform: uppercase;
       letter-spacing: 1rem;
     }
   }
