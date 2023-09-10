@@ -11,12 +11,13 @@ export function getStaticPaths() {
   ];
 }
 
+const { slug } = Astro.params;
+
+// Feels weird to have to load all these image rather than just the one we need.
 import burgerAmericanaImg from "../../images/burgers/americana.jpg";
 import burgerBlueeyesImg from "../../images/burgers/blueeyes.jpg";
 import burgerWillieburgerImg from "../../images/burgers/willieburger.jpg";
 import burgerMidCityImg from "../../images/burgers/midcity.jpg";
-
-const { slug } = Astro.params;
 
 let img;
 if (slug === "americana") {
@@ -29,7 +30,7 @@ if (slug === "americana") {
   img = burgerMidCityImg;
 }
 
-// Feels weird to have to do this.
+// Feels weird to have to do this. Pull *all* Markdown and find just the one we want? Why not just yank the one we need?
 const posts = await Astro.glob(`../../content/*.md`);
 const post = posts.find((post) => post.file.includes(slug));
 ---
@@ -42,8 +43,10 @@ const post = posts.find((post) => post.file.includes(slug));
       class="img"
       transition:name={`burger-image-${slug}`}
     />
+
     <a class="back" href="/">&larr; Smashburgers in Bend</a>
     <h1 transition:name={`title-${slug}`}>{post.frontmatter.restaurant}</h1>
+
     <div class="content">
       <post.Content />
     </div>
