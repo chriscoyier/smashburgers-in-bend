@@ -7,7 +7,12 @@ const { slug, title, body, img, bg, color } = Astro.props;
 <div
   class="card"
   transition:name={`burger-${slug}`}
-  style={`background-color: ${bg}; color: ${color}`}
+  style={`
+    background-color: ${bg};
+    /* future/cooler way to do contrast friendly color picking */
+    /* color: color-contrast(${bg} vs white, black); */
+    color: ${color};
+  `}
 >
   <header>
     <a href={`/burger/${slug}`}>

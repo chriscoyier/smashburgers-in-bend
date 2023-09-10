@@ -54,8 +54,13 @@ const data = await Astro.glob("../content/*.md");
     font-variation-settings: "wdth" 50;
     line-height: 1;
     text-align: center;
-    margin-bottom: 1em;
     text-transform: uppercase;
+
+    color: #dd9900;
+    color: oklch(73.2% 0.168 77.16);
+
+    margin-block: 5rem;
+
     transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
     span {
       font-variation-settings: "wdth" 160;
@@ -63,6 +68,7 @@ const data = await Astro.glob("../content/*.md");
       font-size: var(--font-size-sm);
       font-weight: 200;
       letter-spacing: 1rem;
+      color: white;
     }
     a {
       text-decoration: none;
