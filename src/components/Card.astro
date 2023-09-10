@@ -19,6 +19,7 @@ const { slug, title, body, img, bg, color } = Astro.props;
       {body}
     </p>
   </header>
+
   <Image
     src={img}
     alt={`Photograph of burger from ${title}`}
@@ -37,7 +38,7 @@ const { slug, title, body, img, bg, color } = Astro.props;
     position: relative;
     padding-block-end: 300px;
     header {
-      padding: 1.5rem;
+      padding: 1rem;
       a {
         display: block;
         line-height: 1;
