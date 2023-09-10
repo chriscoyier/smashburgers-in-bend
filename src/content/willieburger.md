@@ -5,6 +5,7 @@ website: https://www.instagram.com/willieburgerbend/
 location: 901 SW Simpson Ave (Deschutes Brewery Tasting Room)
 summary: Zero frills — singles, doubles, and triples.
 bg: "#0a0c11"
+color: "#fff"
 ---
 
 Chris and Kahla's dedication to perfectly classic smashburgers is unmatched with Willieburger. From [Eat Drink Bend's profile page](https://eatdrinkbend.com/restaurants/willieburger/):
