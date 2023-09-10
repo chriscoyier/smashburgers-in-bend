@@ -4,8 +4,6 @@ https://smashburgers.chriscoyier.net/
 
 ## Tech/design things I want to do:
 
-- Fluid Type everywhere
-  - container units
 - Color modes
   - Dark mode
   - Grayscale mode

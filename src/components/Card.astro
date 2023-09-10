@@ -30,7 +30,7 @@ const { slug, title, body, img, bg, color } = Astro.props;
 
 <style lang="scss">
   .card {
-    list-style: none;
+    container: card / inline-size;
     border-radius: 8px;
     overflow: hidden;
     transition: 0.15s;
@@ -44,16 +44,26 @@ const { slug, title, body, img, bg, color } = Astro.props;
         line-height: 1;
         color: inherit;
         text-decoration: none;
+        transition: 0.5s;
         &:hover,
         &:focus {
           text-decoration: underline overline;
           text-decoration-thickness: 5px;
           text-underline-offset: 0.5rem;
+          scale: 1 0.75;
+        }
+        h2 {
+          font-size: 2.5rem;
+          font-size: calc(6cqw + 1rem);
+          margin: 0;
+          font-variation-settings: "wdth" 200;
         }
       }
+
       p {
         opacity: 0.66;
         font-size: 1rem;
+        font-size: calc(2cqw + 0.5rem);
         text-wrap: balance;
       }
     }
@@ -63,9 +73,6 @@ const { slug, title, body, img, bg, color } = Astro.props;
       .img {
         width: 110%;
         object-position: right -50px bottom -40px;
-      }
-      h2 {
-        scale: 1 0.75;
       }
     }
   }
@@ -86,12 +93,6 @@ const { slug, title, body, img, bg, color } = Astro.props;
     position: absolute;
     bottom: -20px;
     right: -40px;
-  }
-  h2 {
-    font-size: 2.5rem;
-    margin: 0;
-    font-variation-settings: "wdth" 200;
-    transition: 0.5s;
   }
   p {
     margin-top: 0.5rem;

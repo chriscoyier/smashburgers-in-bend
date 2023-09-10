@@ -48,8 +48,6 @@ const data = await Astro.glob("../content/*.md");
     width: 90vw;
     max-width: 800px;
     margin: 0 auto 10rem;
-    font-size: 20px;
-    line-height: 1.6;
   }
   h1 {
     font-size: var(--font-size-xxxl);
@@ -58,11 +56,11 @@ const data = await Astro.glob("../content/*.md");
     text-align: center;
     margin-bottom: 1em;
     text-transform: uppercase;
-    transition: 0.1s;
+    transition: 0.5s cubic-bezier(0.47, 1.64, 0.41, 0.8);
     span {
       font-variation-settings: "wdth" 160;
       display: block;
-      font-size: 0.3em;
+      font-size: var(--font-size-sm);
       font-weight: 200;
       letter-spacing: 1rem;
     }
@@ -76,7 +74,7 @@ const data = await Astro.glob("../content/*.md");
   }
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(20rem, 100%), 1fr));
     gap: 2rem;
     padding: 0;
   }
