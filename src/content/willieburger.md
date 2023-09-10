@@ -3,7 +3,7 @@ restaurant: Willieburger
 slug: willieburger
 website: https://www.instagram.com/willieburgerbend/
 location: 901 SW Simpson Ave (Deschutes Brewery Tasting Room)
-summary: As classic as they come.
+summary: Zero frills — singles, doubles, and triples.
 bg: "#0a0c11"
 ---
 
