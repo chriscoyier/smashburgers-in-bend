@@ -11,11 +11,14 @@
     <li><a href="https://www.alleydogzfoodcart.com/menu">Alley Dogz</a></li>
   </ul>
 
-  <p>By: <a href="https://chriscoyier.net">Chris Coyier</a></p>
+  <br />
+
+  <a class="by" href="https://chriscoyier.net">Chris Coyier</a>
 </footer>
 
 <style lang="scss">
   footer {
+    background: rgb(0 0 0 / 0.5);
     text-align: center;
     position: relative;
     padding-block: 5rem;
@@ -26,10 +29,19 @@
       padding: 0;
       li {
         display: inline;
+        font-family: system-ui, sans-serif;
         &:not(:last-child)::after {
           content: ", ";
         }
       }
     }
+  }
+
+  .by {
+    display: inline-block; // inline block
+    margin-block-start: 1rem;
+    text-decoration: none;
+    font-variation-settings: "wdth" 160;
+    font-size: 1.4rem;
   }
 </style>

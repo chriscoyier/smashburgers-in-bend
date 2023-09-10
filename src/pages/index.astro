@@ -12,7 +12,7 @@ const data = await Astro.glob("../content/*.md");
 
 <Layout title="Smashburgers in Bend">
   <main>
-    <h1>Smashburgers <span>in Bend</span></h1>
+    <h1><a href="/">Smashburgers <span>in Bend</span></a></h1>
 
     <div class="card-grid">
       {
@@ -59,12 +59,20 @@ const data = await Astro.glob("../content/*.md");
     text-align: center;
     margin-bottom: 1em;
     text-transform: uppercase;
+    transition: 0.1s;
     span {
       font-variation-settings: "wdth" 160;
       display: block;
       font-size: 0.3em;
       font-weight: 200;
       letter-spacing: 1rem;
+    }
+    a {
+      text-decoration: none;
+    }
+    &:hover,
+    &:focus {
+      font-variation-settings: "wdth" 25;
     }
   }
   .card-grid {

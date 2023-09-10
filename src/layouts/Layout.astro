@@ -46,7 +46,14 @@ const { title } = Astro.props;
 
         hanging-punctuation: first last;
       }
-      img {
+
+      body {
+        margin: 0;
+        height: 100dvh;
+        display: grid;
+        grid-template-rows: 1fr auto;
+      }
+      main img {
         display: block;
         max-width: 100%;
         height: auto;
