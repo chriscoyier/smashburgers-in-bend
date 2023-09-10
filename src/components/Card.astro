@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 const { slug, title, body, img, bg, color } = Astro.props;
 ---
 
-<li
+<div
   class="card"
   transition:name={`burger-${slug}`}
   style={`background-color: ${bg}; color: ${color}`}
@@ -25,7 +25,7 @@ const { slug, title, body, img, bg, color } = Astro.props;
     class="img"
     transition:name={`burger-image-${slug}`}
   />
-</li>
+</div>
 
 <style lang="scss">
   .card {
@@ -45,6 +45,7 @@ const { slug, title, body, img, bg, color } = Astro.props;
       p {
         opacity: 0.66;
         font-size: 1rem;
+        text-wrap: balance;
       }
     }
 

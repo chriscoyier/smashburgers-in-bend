@@ -14,7 +14,7 @@ const data = await Astro.glob("../content/*.md");
   <main>
     <h1>Smashburgers <span>in Bend</span></h1>
 
-    <ul role="list" class="link-card-grid">
+    <div class="card-grid">
       {
         data.map((post, i) => {
           let img;
@@ -39,7 +39,7 @@ const data = await Astro.glob("../content/*.md");
           );
         })
       }
-    </ul>
+    </div>
   </main>
 </Layout>
 
@@ -49,7 +49,6 @@ const data = await Astro.glob("../content/*.md");
     padding: 1rem;
     width: 800px;
     max-width: calc(100% - 2rem);
-    color: white;
     font-size: 20px;
     line-height: 1.6;
   }
@@ -68,7 +67,7 @@ const data = await Astro.glob("../content/*.md");
       letter-spacing: 1rem;
     }
   }
-  .link-card-grid {
+  .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
     gap: 2rem;

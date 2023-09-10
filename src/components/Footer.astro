@@ -1,0 +1,35 @@
+<footer>
+  To try list:
+
+  <ul>
+    <li><a href="https://www.bendinspoon.com/carryout-menu">CHOW</a></li>
+    <li>
+      <a href="https://juniperpreserve.com/dine/trailhead-grill/"
+        >Trailhead Grill</a
+      >
+    </li>
+    <li><a href="https://www.alleydogzfoodcart.com/menu">Alley Dogz</a></li>
+  </ul>
+
+  <p>By: <a href="https://chriscoyier.net">Chris Coyier</a></p>
+</footer>
+
+<style lang="scss">
+  footer {
+    text-align: center;
+    position: relative;
+    padding-block: 5rem;
+    ul {
+      display: inline;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline;
+        &:not(:last-child)::after {
+          content: ", ";
+        }
+      }
+    }
+  }
+</style>

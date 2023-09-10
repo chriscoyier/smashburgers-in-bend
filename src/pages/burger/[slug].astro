@@ -33,6 +33,8 @@ if (slug === "americana") {
 // Feels weird to have to do this. Pull *all* Markdown and find just the one we want? Why not just yank the one we need?
 const posts = await Astro.glob(`../../content/*.md`);
 const post = posts.find((post) => post.file.includes(slug));
+
+const url = new URL(post.frontmatter.website);
 ---
 
 <Layout title={`${post.frontmatter.restaurant} | Smashburgers in Bend`}>
@@ -48,6 +50,18 @@ const post = posts.find((post) => post.file.includes(slug));
     <h1 transition:name={`title-${slug}`}>{post.frontmatter.restaurant}</h1>
 
     <div class="content">
+      <dl class="metadata">
+        <div>
+          <dt><span aria-label="Website">🔗</span></dt>
+          <dd><a href={url}>{url.host}</a></dd>
+        </div>
+
+        <div>
+          <dt><span aria-label="Location">📍</span></dt>
+          <dd>{post.frontmatter.location}</dd>
+        </div>
+      </dl>
+
       <post.Content />
     </div>
   </main>
@@ -55,7 +69,6 @@ const post = posts.find((post) => post.file.includes(slug));
 
 <style lang="scss">
   .back {
-    color: white;
     opacity: 0.66;
     text-decoration: none;
     text-transform: uppercase;
@@ -65,12 +78,11 @@ const post = posts.find((post) => post.file.includes(slug));
     }
   }
   main {
-    color: white;
     padding: 2rem;
   }
   img {
     pointer-events: none;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     width: 100vw;
@@ -86,6 +98,18 @@ const post = posts.find((post) => post.file.includes(slug));
     font-size: var(--font-size-xxxl);
     margin: 0 0 2rem 0;
   }
+
+  .metadata {
+    > div {
+      display: grid;
+      grid-template-columns: 2ch 1fr;
+      margin-block-end: 0.5rem;
+    }
+    dd {
+      margin: 0;
+    }
+  }
+
   .content {
     max-width: 400px;
     line-height: 1.5;

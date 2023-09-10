@@ -2,11 +2,14 @@
 restaurant: Blue Eyes
 slug: blueeyes
 website: https://www.blueeyesburgersandfries.com/
-summary: Meh
+location: 706 NE Greenwood Ave
+summary: A Jackson's Corner popup gone brick and mortar.
 bg: "#d0d1cf"
 color: "#000"
 ---
 
-The burger looks great, but I found it lifeless in two separate attempts to like it.
+From [Janay Wright's review](https://www.bendbulletin.com/lifestyle/entertainment/blue-eyes-burgers-and-fries-in-bend-offers-classic-diner-experience/article_5b32a9f0-06e7-11ed-9f65-9f324b0fdbf7.html):
 
-The onion rings are great though, and it's cool they have a bar of their own.
+> The smash burgers are prepared on a Jackson’s Corner griddled sweet bun with thinly shaved onions smashed directly into the patty itself. True to the smash burger style, the hamburger is thin, asymmetrical and crispy.
+
+As a full-blown shop, they can and do offer more, a kid's burger, onion rings, soft-serve based deserts, and even a full bar.
