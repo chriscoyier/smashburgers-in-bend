@@ -1,12 +1,14 @@
 # Smashburgers in Bend
 
-TODO:
+https://smashburgers.chriscoyier.net/
+
+## Tech/design things I want to do:
 
 - Fluid Type everywhere
   - container units
-- Dark & Color Modes (black and white?)
-- Automatic color contrast via color functions
-- High dynamic range colors
-
-- Full list of places
-- Good set of metadata
+- Color modes
+  - Dark mode
+  - Grayscale mode
+  - Purple mode
+- Automatic color contrast via color functions rather than hard coding
+- Progressive enhancement to high dynamic range colors
