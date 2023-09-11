@@ -4,7 +4,8 @@ import { Image } from "astro:assets";
 const { slug, title, body, img, bg, color } = Astro.props;
 ---
 
-<div
+<a
+  href={`/burger/${slug}`}
   class="card"
   transition:name={`burger-${slug}`}
   style={`
@@ -13,17 +14,16 @@ const { slug, title, body, img, bg, color } = Astro.props;
     /* color: color-contrast(${bg} vs white, black); */
     color: ${color};
   `}
+  aria-label={title}
 >
-  <header>
-    <a href={`/burger/${slug}`}>
-      <h2 transition:name={`title-${slug}`}>
-        {title}
-      </h2>
-    </a>
+  <div class="header">
+    <h2 transition:name={`title-${slug}`}>
+      {title}
+    </h2>
     <p>
       {body}
     </p>
-  </header>
+  </div>
 
   <Image
     src={img}
@@ -31,38 +31,27 @@ const { slug, title, body, img, bg, color } = Astro.props;
     class="img"
     transition:name={`burger-image-${slug}`}
   />
-</div>
+</a>
 
 <style lang="scss">
   .card {
+    display: block;
     container: card / inline-size;
     border-radius: 8px;
     overflow: hidden;
-    transition: 0.15s;
-    transform-origin: top center;
     position: relative;
     padding-block-end: 300px;
-    header {
+    text-decoration: none;
+    .header {
       padding: 1.5rem;
-      a {
-        display: block;
-        line-height: 1;
-        color: inherit;
-        text-decoration: none;
-        transition: 0.5s;
-        &:hover,
-        &:focus {
-          text-decoration: underline overline;
-          text-decoration-thickness: 5px;
-          text-underline-offset: 0.5rem;
-          scale: 1 0.75;
-        }
-        h2 {
-          font-size: 2.5rem;
-          font-size: calc(6cqw + 1rem);
-          margin: 0;
-          font-variation-settings: "wdth" 200;
-        }
+
+      h2 {
+        transition: 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        display: inline-block;
+        font-size: 2.5rem;
+        font-size: calc(6cqw + 1rem);
+        margin: 0;
+        font-variation-settings: "wdth" 200;
       }
 
       p {
@@ -78,6 +67,12 @@ const { slug, title, body, img, bg, color } = Astro.props;
       .img {
         width: 110%;
         object-position: right -50px bottom -40px;
+      }
+      h2 {
+        text-decoration: underline overline;
+        text-decoration-thickness: 5px;
+        text-underline-offset: 0.5rem;
+        scale: 1 0.75;
       }
     }
   }
