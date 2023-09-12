@@ -38,7 +38,6 @@ const { slug, title, body, img, bg, color } = Astro.props;
     display: block;
     container: card / inline-size;
     border-radius: 8px;
-    overflow: hidden;
     position: relative;
     padding-block-end: 300px;
     text-decoration: none;
@@ -65,8 +64,7 @@ const { slug, title, body, img, bg, color } = Astro.props;
     &:hover,
     &:focus-within {
       .img {
-        width: 110%;
-        object-position: right -50px bottom -40px;
+        object-position: right -80px bottom -80px;
       }
       h2 {
         text-decoration: underline overline;
@@ -89,10 +87,11 @@ const { slug, title, body, img, bg, color } = Astro.props;
     max-width: 120%;
     object-fit: cover;
     height: 300px;
-    object-position: right -40px bottom -40px;
+    object-position: right -70px bottom -70px;
     position: absolute;
-    bottom: -20px;
-    right: -40px;
+    bottom: 0;
+    right: 0;
+    border-end-end-radius: 8px;
   }
   p {
     margin-top: 0.5rem;
