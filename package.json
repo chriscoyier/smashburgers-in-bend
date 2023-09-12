@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
+    "dev": "source $HOME/.nvm/nvm.sh; nvm use; astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
