@@ -1,6 +1,7 @@
 ---
 restaurant: MidCity
 slug: midcity
+image: "../../images/burgers/midcity.jpg"
 website: https://midcitysmashedburger.com/
 summary: Started in Portland and the 4th cart is now in Bend.
 location: Various cart locations

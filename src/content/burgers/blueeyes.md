@@ -1,6 +1,7 @@
 ---
 restaurant: Blue Eyes
 slug: blueeyes
+image: "../../images/burgers/blueeyes.jpg"
 website: https://www.blueeyesburgersandfries.com/
 location: 706 NE Greenwood Ave
 summary: A Jackson's Corner popup gone brick and mortar.

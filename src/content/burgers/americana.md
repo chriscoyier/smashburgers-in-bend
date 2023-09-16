@@ -1,6 +1,7 @@
 ---
 restaurant: Americana
 slug: americana
+image: "../../images/burgers/americana.jpg"
 website: https://www.americanafoodtruck.com/
 location: 536 NW Arizona Ave (Podski)
 summary: Intentionally affordable and downhome.

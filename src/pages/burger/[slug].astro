@@ -19,23 +19,6 @@ export async function getStaticPaths() {
 
 const { slug } = Astro.params;
 
-// Feels weird to have to load all these image rather than just the one we need.
-import burgerAmericanaImg from "../../images/burgers/americana.jpg";
-import burgerBlueeyesImg from "../../images/burgers/blueeyes.jpg";
-import burgerWillieburgerImg from "../../images/burgers/willieburger.jpg";
-import burgerMidCityImg from "../../images/burgers/midcity.jpg";
-
-let img;
-if (slug === "americana") {
-  img = burgerAmericanaImg;
-} else if (slug === "blueeyes") {
-  img = burgerBlueeyesImg;
-} else if (slug === "willieburger") {
-  img = burgerWillieburgerImg;
-} else if (slug === "midcity") {
-  img = burgerMidCityImg;
-}
-
 const post = await getEntry("burgers", slug);
 
 const url = new URL(post.data.website);
@@ -44,10 +27,12 @@ const url = new URL(post.data.website);
 <Layout title={`${post.data.restaurant} | Smashburgers in Bend`}>
   <main transition:name={`burger-${slug}`}>
     <Image
-      src={img}
+      src={post.data.image}
       alt={`Photograph of burger from ${post.data.restaurant}`}
       class="img"
       transition:name={`burger-image-${slug}`}
+      width="2500"
+      height="2500"
     />
 
     <a class="back" href="/">&larr; Smashburgers in Bend</a>

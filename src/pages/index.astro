@@ -4,11 +4,6 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 
-import burgerAmericanaImg from "../images/burgers/americana.jpg";
-import burgerBlueeyesImg from "../images/burgers/blueeyes.jpg";
-import burgerWillieburgerImg from "../images/burgers/willieburger.jpg";
-import burgerMidCityImg from "../images/burgers/midcity.jpg";
-
 const burgers = await getCollection("burgers");
 ---
 
@@ -19,20 +14,10 @@ const burgers = await getCollection("burgers");
     <div class="card-grid">
       {
         burgers.map((post) => {
-          let img;
-          if (post.slug === "americana") {
-            img = burgerAmericanaImg;
-          } else if (post.slug === "blueeyes") {
-            img = burgerBlueeyesImg;
-          } else if (post.slug === "midcity") {
-            img = burgerMidCityImg;
-          } else if (post.slug === "willieburger") {
-            img = burgerWillieburgerImg;
-          }
           return (
             <Card
               slug={post.slug}
-              img={img}
+              img={post.data.image}
               bg={post.data.bg}
               color={post.data.color}
               title={post.data.restaurant}
