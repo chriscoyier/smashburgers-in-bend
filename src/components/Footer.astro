@@ -1,18 +1,8 @@
 <footer>
-  To try list:
-
-  <ul>
-    <li><a href="https://www.bendinspoon.com/carryout-menu">CHOW</a></li>
-    <li>
-      <a href="https://juniperpreserve.com/dine/trailhead-grill/"
-        >Trailhead Grill</a
-      >
-    </li>
-  </ul>
-
-  <br />
-
+  by
   <a class="by" href="https://chriscoyier.net">Chris Coyier</a>
+  <br />
+  <a href="https://github.com/chriscoyier/smashburgers-in-bend">Open Source</a>
 </footer>
 
 <style lang="scss">
@@ -20,27 +10,14 @@
     background: linear-gradient(to bottom, transparent, rgb(0 0 0 / 0.5) 70%);
     text-align: center;
     position: relative;
-    padding-block: 3rem;
-    ul {
-      display: inline;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        display: inline;
-        font-family: system-ui, sans-serif;
-        &:not(:last-child)::after {
-          content: ", ";
-        }
-      }
-    }
+    padding-block: 4rem 2rem;
   }
 
   .by {
-    display: inline-block; // inline block
-    margin-block-start: 1rem;
     text-decoration: none;
     font-variation-settings: "wdth" 160;
     font-size: var(--font-size-lg);
+    margin-block-end: 0.5rem;
+    display: inline-block;
   }
 </style>

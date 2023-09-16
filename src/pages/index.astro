@@ -7,9 +7,21 @@ import Card from "../components/Card.astro";
 const burgers = await getCollection("burgers");
 ---
 
-<Layout title="Smashburgers in Bend">
+<Layout title="Smashburgers in Bend, Oregon">
   <main>
-    <h1><a href="/">Smashburgers <span>in Bend</span></a></h1>
+    <h1>
+      <a href="/">Smashburgers <span title="Bend, Oregon">in Bend</span></a>
+    </h1>
+
+    <p>
+      If you can order it medium-rare, it's not a smashburger. Smashburgers are
+      smashed to a thinness that they cook through on the griddle. The smashing
+      forms a seared crispy crust, especially on the thinned edges, while
+      staying juicy. They are a bit of a trend, but one that appears here to
+      stay, likely because they are tasty and burgers in general are the most
+      popular food item in America. Here are the current players in Bend,
+      Oregon.
+    </p>
 
     <div class="card-grid">
       {

@@ -10,3 +10,7 @@ color: "#fff"
 ---
 
 It ain't just dogs.
+
+[Nancy](https://eatdrinkbend.com/smash-burgers-bend-oregon/):
+
+> Don’t let the name fool you—Alley Dogz now serves smash burgers alongside their extensive hot dog and corn dog offerings. This smashy comes with a heaping of grilled onions, pickles, and gooey American cheese.

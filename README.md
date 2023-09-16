@@ -1,3 +1,11 @@
 # Smashburgers in Bend
 
+Deployed site:
+
 https://smashburgers.chriscoyier.net/
+
+## TODO Burgers
+
+- CHOW has a smashburger [on the carry out menu](https://www.bendinspoon.com/carryout-menu).
+
+- [Trailhead Grill](https://juniperpreserve.com/dine/trailhead-grill/) at Juniper Preserve (the new name for Pronghorn Resort) has a smashburger [on the lunch/dinner menu](https://juniperpreserve.com/wp-content/uploads/2023/07/THGMain_2306.pdf).
