@@ -1,14 +1,20 @@
 ---
+import { getEntry } from "astro:content";
+
 import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
 
-export function getStaticPaths() {
-  return [
-    { params: { slug: "americana" } },
-    { params: { slug: "blueeyes" } },
-    { params: { slug: "willieburger" } },
-    { params: { slug: "midcity" } },
-  ];
+export async function getStaticPaths() {
+  const posts = await Astro.glob("../../content/burgers/*.md");
+
+  return posts.map((post) => ({
+    params: {
+      slug: post.frontmatter.slug,
+    },
+    props: {
+      post,
+    },
+  }));
 }
 
 const { slug } = Astro.params;
@@ -30,24 +36,22 @@ if (slug === "americana") {
   img = burgerMidCityImg;
 }
 
-// Feels weird to have to do this. Pull *all* Markdown and find just the one we want? Why not just yank the one we need?
-const posts = await Astro.glob(`../../content/*.md`);
-const post = posts.find((post) => post.file.includes(slug));
+const post = await getEntry("burgers", slug);
 
-const url = new URL(post.frontmatter.website);
+const url = new URL(post.data.website);
 ---
 
-<Layout title={`${post.frontmatter.restaurant} | Smashburgers in Bend`}>
+<Layout title={`${post.data.restaurant} | Smashburgers in Bend`}>
   <main transition:name={`burger-${slug}`}>
     <Image
       src={img}
-      alt={`Photograph of burger from ${post.frontmatter.restaurant}`}
+      alt={`Photograph of burger from ${post.data.restaurant}`}
       class="img"
       transition:name={`burger-image-${slug}`}
     />
 
     <a class="back" href="/">&larr; Smashburgers in Bend</a>
-    <h1 transition:name={`title-${slug}`}>{post.frontmatter.restaurant}</h1>
+    <h1 transition:name={`title-${slug}`}>{post.data.restaurant}</h1>
 
     <div class="content">
       <dl class="metadata">
@@ -58,11 +62,11 @@ const url = new URL(post.frontmatter.website);
 
         <div>
           <dt><span aria-label="Location">📍</span></dt>
-          <dd>{post.frontmatter.location}</dd>
+          <dd>{post.data.location}</dd>
         </div>
       </dl>
 
-      <post.Content />
+      <Astro.props.post.Content />
     </div>
   </main>
 </Layout>

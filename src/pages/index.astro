@@ -1,4 +1,6 @@
 ---
+import { getCollection } from "astro:content";
+
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 
@@ -7,7 +9,7 @@ import burgerBlueeyesImg from "../images/burgers/blueeyes.jpg";
 import burgerWillieburgerImg from "../images/burgers/willieburger.jpg";
 import burgerMidCityImg from "../images/burgers/midcity.jpg";
 
-const data = await Astro.glob("../content/*.md");
+const burgers = await getCollection("burgers");
 ---
 
 <Layout title="Smashburgers in Bend">
@@ -16,25 +18,25 @@ const data = await Astro.glob("../content/*.md");
 
     <div class="card-grid">
       {
-        data.map((post, i) => {
+        burgers.map((post) => {
           let img;
-          if (post.frontmatter.slug === "americana") {
+          if (post.slug === "americana") {
             img = burgerAmericanaImg;
-          } else if (post.frontmatter.slug === "blueeyes") {
+          } else if (post.slug === "blueeyes") {
             img = burgerBlueeyesImg;
-          } else if (post.frontmatter.slug === "midcity") {
+          } else if (post.slug === "midcity") {
             img = burgerMidCityImg;
-          } else if (post.frontmatter.slug === "willieburger") {
+          } else if (post.slug === "willieburger") {
             img = burgerWillieburgerImg;
           }
           return (
             <Card
-              slug={post.frontmatter.slug}
+              slug={post.slug}
               img={img}
-              bg={post.frontmatter.bg}
-              color={post.frontmatter.color}
-              title={post.frontmatter.restaurant}
-              body={post.frontmatter.summary}
+              bg={post.data.bg}
+              color={post.data.color}
+              title={post.data.restaurant}
+              body={post.data.summary}
             />
           );
         })
