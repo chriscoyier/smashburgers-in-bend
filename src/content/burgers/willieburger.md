@@ -9,8 +9,10 @@ bg: "#0a0c11"
 color: "#fff"
 ---
 
-Chris and Kahla's dedication to perfectly classic smashburgers is unmatched with Willieburger. From [Eat Drink Bend's profile page](https://eatdrinkbend.com/restaurants/willieburger/):
+Willieburger, from Chris and Kahla Collins, is the best smashburger in Bend. Their dedication to perfectly classic smashburgers is unmatched. All they do is singles, doubles, and triples. The thinly sliced onions are smashed right into the patty during cooking. Make it spicy by adding jalapeños done the same way for $1.
 
-> We’re a mom and pop burger cart that keeps it simple. We specialize in smash style burgers that come standard with grilled onions, cheese, and burger sauce. Our options are singles, doubles, and triples. All burgers come with a bag of chips.
+No sides except bags of chips. No drinks except a cooler of sodas. No frills. Just burgers.
 
-Entirely based on taste, they are my favorite. But frankly the unpredictable hours and location have left me frustrated a few times and I'm a creature that values predictability. Willieburger is brand new though, only opening in 2022, and I'd say _most_ carts took longer than that to find their footing. The fact that they sell out at every event is a good sign.
+Frankly the unpredictable hours and location have left me frustrated a few times and I'm a creature that values predictability. Your best bet is consulting Instagram, as they post schedules [like this](https://www.instagram.com/p/Cw35pGGruNo/) sometimes.
+
+They sell out nearly every time they are open especially at events, so that should tell you something about how good they are.
