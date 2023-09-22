@@ -10,8 +10,6 @@ https://smashburgers.chriscoyier.net/
 
 - [Trailhead Grill](https://juniperpreserve.com/dine/trailhead-grill/) at Juniper Preserve (the new name for Pronghorn Resort) has a smashburger [on the lunch/dinner menu](https://juniperpreserve.com/wp-content/uploads/2023/07/THGMain_2306.pdf).
 
-- Bend Brewing [has a smashburger](https://www.bendbrewingco.com/the-pub) on the menu.
-
 - Worthy Brewing (West Side Only) [has build-your-own smashburgers](https://worthy.beer/brewery-with-food-bend/burgers-bend-oregon/).
 
 ## Interesting related links
