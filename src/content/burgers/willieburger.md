@@ -9,7 +9,7 @@ bg: "#0a0c11"
 color: "#fff"
 ---
 
-Willieburger, from Chris and Kahla Collins, is the best smashburger in Bend. Their dedication to perfectly classic smashburgers is unmatched. All they do is singles, doubles, and triples. The thinly sliced onions are smashed right into the patty during cooking. Make it spicy by adding jalapeños done the same way for $1.
+Willieburger, from ~Chris and Kahla Collins~ [Andrew George](https://www.bendbulletin.com/lifestyle/willieburger-s-next-chapter-a-new-owner-takes-the-helm/article_b686cc42-1887-11ef-8fc8-07cc1bd06aee.html), is the best smashburger in Bend. Their dedication to perfectly classic smashburgers is unmatched. All they do is singles, doubles, and triples. The thinly sliced onions are smashed right into the patty during cooking. Make it spicy by adding jalapeños done the same way for $1.
 
 No sides except bags of chips. No drinks except a cooler of sodas. No frills. Just burgers.
 
