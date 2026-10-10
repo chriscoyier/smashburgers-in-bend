@@ -1,3 +1,7 @@
+NOTE: This has moved to CodePen: https://codepen.io/editor/chriscoyier/pen/01a1266a-c176-7f1b-8aa1-c90a80a0debd (still deployed at the same place)
+
+---
+
 # Smashburgers in Bend
 
 Deployed site:
